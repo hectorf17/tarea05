@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <main>
+        <header>
+            <img src="logo-amarillo2.png" alt="logo" height="45">
+        </header>
+        <h1>CASOS PRACTICOS DE CONDICIONALES ANIDADAS</h1>
+        <div id="caso">
+            <img src="caso3.PNG" alt="caso03">
+        </div>
+        <div id="solucion">
+            <script>
+                //Declaracion de variables
+                var tipo_enf, costo_dia, nro_dia, edad, costo_ini, costo_adicional, costo_fin;
+
+                //Fase de lectura
+                tipo_enf = parseInt(prompt("Ingrese tipo de enfermedad [1,2,3,4..]"));
+                edad = parseInt(prompt("Ingrese la edad del paciente"));
+                nro_dia = parseInt(prompt("Ingrese los dias de hospitalizacion"));
+
+                //Fase de procesamiento
+                if (tipo_enf == 1) {
+                    costo_dia = 25;
+                } else {
+                    if (tipo_enf == 2) {
+                        costo_dia = 16;
+                    } else {
+                        if (tipo_enf == 3) {
+                            costo_dia = 20;
+                        } else {
+                            if (tipo_enf == 4) {
+                                costo_dia = 32;
+                            } else {
+                                costo_dia = 20;
+                            }
+                        }
+                    }
+                }
+
+                costo_ini = costo_dia * nro_dia;
+
+                //calculo del incremento
+                if (edad >= 14 && edad <= 22) {
+                    costo_adicional = costo_ini * 0.10;
+                } else {
+                    costo_adicional = 0;
+
+                }
+                costo_fin = costo_ini + costo_adicional;
+
+                //Fase de salida
+                document.write("Tipo de enfermedad: "+tipo_enf+"<br>");
+                document.write("Dias de internamiento: "+nro_dia+"<br>");
+                document.write("Edad del paciente: "+edad+"<br>");
+                document.write("Costo inicial: "+costo_ini+"<br>");
+                document.write("Incremento por edad: "+costo_adicional+"<br>");
+                document.write("Costo Final: "+costo_fin);
+
+                costo_adicional.toFixed=2
+            </script>
+        </div>
+    </main>
+
+</body>
+
+</html>
